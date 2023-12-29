@@ -42,7 +42,16 @@
 //! destroy_local_asset: which destroys a local asset and all its associated data
 
 #![cfg_attr(not(feature = "std"), no_std)]
-
+use frame_support::pallet;
+pub use pallet::*;
+#[cfg(any(test, feature = "runtime-benchmarks"))]
+mod benchmarks;
+pub mod migrations;
+#[cfg(test)]
+pub mod mock;
+#[cfg(test)]
+pub mod tests;
+pub mod weights;
 use frame_support::pallet;
 pub use pallet::*;
 #[cfg(any(test, feature = "runtime-benchmarks"))]
