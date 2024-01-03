@@ -10,6 +10,18 @@ contract CallPermitDemo {
 
     /// @notice The bond does not exist
     error NoBond();
+// SPDX-License-Identifier: GPL-3.0-only
+pragma solidity >=0.8.3;
+
+import "../../../precompiles/call-permit/CallPermit.sol";
+
+/// @notice Smart contract to demonstrate how to use Call Permit precompile
+contract CallPermitDemo {
+    /// @notice The bond amount is too low
+    error BondAmountTooLow(uint256 value, uint256 required);
+
+    /// @notice The bond does not exist
+    error NoBond();
 
     /// @notice The bond already exists
     error AlreadyBonded();
